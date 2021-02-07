@@ -1,0 +1,10 @@
+<div class="card-wrapper">
+  <div class="row" *ngFor="let row of rows; let i = index">
+    <div class="col" *ngFor="let col of cols" [ngClass]="{'checked': card.matchedNumbers[col + row]}" (click)="toggleCell(col, row)">
+      <span class="cell-value" [ngClass]="{'free-space': col == 'N' && row == '3'}">
+        {{i == 0 ? col : card.numbers[col + row]}}
+      </span>
+    </div>
+  </div>
+</div>
+<button class="doNotPrint" (click)="resetCard()">Reset Card</button>

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="bingo-letter">
+      {{calledLetter}}
+  </div>
+  <div class="bingo-number">
+      {{calledNumber}}
+  </div>
+
+  <div class="all-numbers" *ngIf="showAllNums">
+    {{'All Numbers: ' + calledNumbers}}
+  </div>
+  <button (click)="callNewNumber()">Next Number</button>
+  <button (click)="togglePreviousNumbers()">{{(showAllNums ? 'Hide' : 'Show') + ' Called Numbers'}}</button>
+</div>

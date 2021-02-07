@@ -1,0 +1,46 @@
+.row{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.col{
+	height: 100px;
+	width: 100px;
+	color: black;
+	border: 1px solid black;
+  text-align: center;
+  position: relative;
+  &.checked {
+    /*inspired by https://www.tjvantoll.com/2013/09/12/building-custom-text-strikethroughs-with-css/*/
+    position: relative;
+    display: inline-block;
+    &::before,
+    &::after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      left: 0px;
+      top: 49%;
+      opacity: 0.7;
+    }
+    &::before {
+      border-bottom: 2px solid red;
+      -webkit-transform: skewY(-45deg);
+      transform: skewY(-45deg);
+    }
+    &::after {
+      border-bottom: 2px solid red;
+      -webkit-transform: skewY(45deg);
+      transform: skewY(45deg);
+    }
+  }
+}
+.cell-value{
+  font-size: 50px;
+  top: 17px;
+  right: 24px;
+  position: absolute;
+  &.free-space{
+    font-size: 25px;
+  }
+}

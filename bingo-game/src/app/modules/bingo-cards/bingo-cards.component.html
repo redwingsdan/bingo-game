@@ -1,0 +1,8 @@
+<div class="container">
+  <button class="doNotPrint" (click)="generateMoreCards()">Generate More Cards</button>
+  <button class="doNotPrint" (click)="printCard()">Print</button>
+  <div *ngFor="let card of cards">
+    <bingo-card [card]="card" (reset)="resetCard(card)"></bingo-card>
+  </div>
+</div>
+<div class="onlyPrint">TEST STUFF</div>
